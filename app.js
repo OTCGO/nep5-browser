@@ -29,21 +29,27 @@
             // load some data
             console.log('#/transactions')
             this.partial('templates/transaction.tpl');
-        }); 
-        
+        });
+
         //addresses
         this.get('#/addresses', function () {
             // load some data
             console.log('#/addresses')
             this.partial('templates/address.tpl');
-        }); 
-        
+        });
+
         //addresses
         this.get('#/contracts', function () {
             // load some data
             console.log('#/contracts')
             this.partial('templates/contract.tpl');
-        });                
+        });
+
+        //addresses
+        this.get('#/top', function () {
+            // load some data
+            console.log('#/top')
+        });
     })
 
     app.run('#/');

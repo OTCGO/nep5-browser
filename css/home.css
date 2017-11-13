@@ -1,0 +1,46 @@
+
+.neo-charts {
+   
+}
+
+.mdl-card {
+    width: 100%;
+}
+.mdl-grid .mdl-card.neo-price {
+    height: 350px;
+} 
+.mdl-grid .mdl-card p{
+    margin-bottom: 5px;
+}
+
+.mdl-grid .mdl-card p.update-time{
+    text-align: right;
+}
+
+.neo-customized-section .eo-section-title {
+
+}
+
+.neo-customized-section .mdl-card.neo-tran{
+    height: 500px;
+}
+
+.neo-customized-section table.neo-block {
+    height: 500px;
+}
+
+.neo-customized-section .neo-list .mdl-list__item {
+    padding: 5px 16px;
+    border-bottom:1px solid lightgrey;
+}
+
+.neo-customized-section .neo-list .mdl-list__item  .hash {
+    /* display: block;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.neo-customized-section .neo-list .material-icons {
+    height: 20px;
+    width: 20px;
+}

@@ -16,8 +16,12 @@
 
 body {
   margin: 0;
+  background: #f3f3f3
 }
 
+a {
+  text-decoration: none;
+}
 
 /* Disable ugly boxes around images in IE10 */
 
