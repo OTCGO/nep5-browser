@@ -1,0 +1,227 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+body {
+  margin: 0;
+}
+
+
+/* Disable ugly boxes around images in IE10 */
+
+::-moz-selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+::selection {
+  background-color: #6ab344;
+  color: #fff;
+}
+
+.neo-search-box .mdl-textfield__input {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.neo-header .mdl-menu__container {
+  z-index: 50;
+  margin: 0 !important;
+}
+
+.mdl-textfield--expandable {
+  width: auto;
+}
+
+.neo-mobile-title {
+  display: none !important;
+}
+
+.neo-logo-image {
+  height: 28px;
+  width: 140px;
+}
+
+.neo-header {
+  overflow: visible;
+  background-color: white;
+}
+
+.neo-header .material-icons {
+  color: #767777 !important;
+}
+
+.neo-header .mdl-layout__drawer-button {
+  background: transparent;
+  color: #767777;
+}
+
+.neo-header .mdl-navigation__link {
+  color: #757575;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.neo-navigation-container {
+  /* Simple hack to make the overflow happen to the left instead... */
+  direction: rtl;
+  order: 1;
+  width: 500px;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), width 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neo-navigation {
+  /* ... and now make sure the content is actually LTR */
+  direction: ltr;
+  justify-content: flex-end;
+  width: 800px;
+}
+
+.neo-navigation .mdl-navigation__link {
+  display: inline-block;
+  height: 60px;
+  line-height: 68px;
+  background-color: transparent !important;
+  border-bottom: 4px solid transparent;
+}
+
+.neo-navigation .mdl-navigation__link:hover {
+  border-bottom: 4px solid #8bc34a;
+}
+
+.neo-search-box {
+  order: 2;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.neo-more-button {
+  order: 3;
+}
+
+.neo-drawer {
+  border-right: none;
+}
+
+.neo-drawer-separator {
+  height: 1px;
+  background-color: #dcdcdc;
+  margin: 8px 0;
+}
+
+.neo-drawer .mdl-navigation__link.mdl-navigation__link {
+  font-size: 14px;
+  color: #757575;
+}
+
+.neo-drawer span.mdl-navigation__link.mdl-navigation__link {
+  color: #8bc34a;
+}
+
+.neo-drawer .mdl-layout-title {
+  position: relative;
+  background: #6ab344;
+  height: 160px;
+}
+
+.neo-drawer .neo-logo-image {
+  position: absolute;
+  bottom: 16px;
+}
+
+.neo-link {
+  text-decoration: none;
+  color: #8bc34a !important;
+}
+
+.neo-link:hover {
+  color: #7cb342 !important;
+}
+
+.neo-link .material-icons {
+  position: relative;
+  top: -1px;
+  vertical-align: middle;
+}
+
+.neo-footer {
+  background-color: #fafafa;
+  position: relative;
+}
+
+.neo-footer a:hover {
+  color: #8bc34a;
+}
+
+.neo-footer .mdl-mega-footer--top-section::after {
+  border-bottom: none;
+}
+
+.neo-footer .mdl-mega-footer--middle-section::after {
+  border-bottom: none;
+}
+
+.neo-footer .mdl-mega-footer--bottom-section {
+  position: relative;
+}
+
+.neo-footer .mdl-mega-footer--bottom-section a {
+  margin-right: 2em;
+}
+
+.neo-footer .mdl-mega-footer--right-section a .material-icons {
+  position: relative;
+  top: 6px;
+}
+
+.neo-link-menu:hover {
+  cursor: pointer;
+}
+
+
+/**** Mobile layout ****/
+
+@media (max-width: 900px) {
+  .neo-navigation-container {
+    display: none;
+  }
+  .neo-title {
+    display: none !important;
+  }
+  .neo-mobile-title {
+    display: block !important;
+    position: absolute;
+    left: calc(50% - 70px);
+    top: 12px;
+    transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  /* WebViews in iOS 9 break the "~" operator, and WebViews in OS X 10.10 break
+     consecutive "+" operators in some cases. Therefore, we need to use both
+     here to cover all the bases. */
+  .neo-more-button {
+    display: none;
+  }
+  .neo-search-box .mdl-textfield__expandable-holder {
+    width: 100%;
+  }
+  .neo-footer .mdl-mega-footer--bottom-section {
+    display: none;
+  }
+}
+
+
+.mdl-data-table {
+  table-layout:fixed;
+  width:100%; 
+}
