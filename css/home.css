@@ -44,3 +44,10 @@
     height: 20px;
     width: 20px;
 }
+.neo-customized-section .neo-list .neo-hash{
+    display: inline-block;
+    width: 45%;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    margin-left: 2%;
+}

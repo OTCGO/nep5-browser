@@ -45,6 +45,13 @@
             this.partial('templates/contract.tpl');
         });
 
+        // tx/:id
+        this.get('#/tx/hash/:id', function () {
+            // load some data
+            console.log('#/tx/:id',this.params['id'] )
+            this.partial('templates/tx.tpl');
+        });
+
         //addresses
         this.get('#/top', function () {
             // load some data

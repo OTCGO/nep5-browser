@@ -78,18 +78,32 @@
             </div>
             <div class="mdl-card mdl-shadow--2dp neo-tran">
                 <ul class="mdl-list neo-list">
-                    <li class="mdl-list__item mdl-list__item--three-line">
+                    <li class="mdl-list__item">
                         <span class="mdl-list__item-primary-content">
-                            <i class="material-icons mdl-list__item-avatar">person</i>
-                            <span>Bryan Cranston</span>
-                            <span class="mdl-list__item-text-body">
-                                <- ddd> ddd
+                            <i class="material-icons mdl-list__item-avatar">book</i>
+                            <span>合约交易</span>
+                            <span class="mdl-list__item-text-body neo-hash">
+                                <a href="#/tx/hash/111">0x74257620cc2fa5a09a590fc48d1c8705eb38c193f8261a7ff4354e756b54bfbd</a>
                             </span>
                         </span>
                         <span class="mdl-list__item-secondary-content">
-                            <a class="mdl-list__item-secondary-action" href="#">
-                                <i class="material-icons">star</i>
-                            </a>
+                            <span class="mdl-list__item-text-body">
+                                2017-11-14 11:37:19
+                            </span>
+                        </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <span class="mdl-list__item-primary-content">
+                            <i class="material-icons mdl-list__item-avatar">lightbulb-on</i>
+                            <span>提取GAS</span>
+                            <span class="mdl-list__item-text-body neo-hash">
+                                <a href="#/tx/hash/2222">0x74257620cc2fa5a09a590fc48d1c8705eb38c193f8261a7ff4354e756b54bfbd</a>
+                            </span>
+                        </span>
+                        <span class="mdl-list__item-secondary-content">
+                            <span class="mdl-list__item-text-body">
+                                2017-11-14 11:37:19
+                            </span>
                         </span>
                     </li>
                 </ul>

@@ -1,0 +1,23 @@
+{
+  "name": "neo-browser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OTCGO/neo-browser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OTCGO/neo-browser/issues"
+  },
+  "homepage": "https://github.com/OTCGO/neo-browser#readme",
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  }
+}
