@@ -1,38 +1,38 @@
-<div class="neo-transactions mdl-grid">
+<div class="neo-transactions mdl-grid">  
     <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--1-offset">
-        <div class="mdl-card mdl-shadow--2dp neo-tran">
-            <ul class="mdl-list neo-list">
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-avatar">book</i>
-                        <span>合约交易</span>
-                        <span class="mdl-list__item-text-body neo-hash">
-                            <a href="">0x74257620cc2fa5a09a590fc48d1c8705eb38c193f8261a7ff4354e756b54bfbd</a>
-                        </span>
-                    </span>
-                    <span class="mdl-list__item-secondary-content">
-                        <span class="mdl-list__item-text-body">
-                            2017-11-14 11:37:19
-                        </span>
-                    </span>
-                </li>
-                <li class="mdl-list__item">
-                    <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-avatar">lightbulb-on</i>
-                        <span>提取GAS</span>
-                        <span class="mdl-list__item-text-body neo-hash">
-                            <a href="">0x74257620cc2fa5a09a590fc48d1c8705eb38c193f8261a7ff4354e756b54bfbd</a>
-                        </span>
-                    </span>
-                    <span class="mdl-list__item-secondary-content">
-                        <span class="mdl-list__item-text-body">
-                            2017-11-14 11:37:19
-                        </span>
-                    </span>
-                </li>
-            </ul>
-        </div>
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+            <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">名称</th>
+                    <th>类型</th>
+                    <th>txid</th>
+                    <th>转入地址</th>
+                    <th>转出地址</th>
+                    <th>数量</th>
+                    <th>区块索引</th>
+                    <th>交易时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for ( let i = 0; i < data.rows.length; i++ ) { %>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">RPX</td>
+                        <td>NEP5</td>
+                        <td><%=data.rows[i]['txid'].substring(0,10) %>...</td>
+                        <td><%=data.rows[i]['to'].substring(0,10) %>...</td>
+                        <td><%=data.rows[i]['from'].substring(0,10) %>...</td>
+                        <td><%=data.rows[i]['value'] %></td>
+                        <td><%=data.rows[i]['blockIndex'] %></td>
+                        <td><%=moment(new Date(data.rows[i]['createdAt'])).utcOffset(16).format('YYYY-MM-DD HH:mm:ss') %></td> 
+                    </tr>
+                <% } %>
+
+            </tbody>
+        </table>
     </div>
+
 </div>
 
-<link rel="stylesheet" href="css/asset.css" />
+
+<link rel="stylesheet" href="css/transaction.css" />
+

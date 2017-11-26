@@ -1,0 +1,32 @@
+.mdl-data-table {
+    table-layout:fixed;
+    width:100%; 
+}
+
+.mdl-card {
+    width: 100%;
+}
+
+
+.neo-transactions .neo-list .mdl-list__item {
+    padding: 5px 16px;
+    border-bottom:1px solid lightgrey;
+}
+
+.neo-transactions .neo-list .mdl-list__item  .hash {
+    /* display: block;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
+
+.neo-transactions .neo-list .material-icons {
+    height: 20px;
+    width: 20px;
+}
+.neo-transactions .neo-list .neo-hash{
+    display: inline-block;
+    width: 45%;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    margin-left: 2%;
+}

@@ -4,10 +4,8 @@
                 <thead>
                     <tr>
                         <th class="mdl-data-table__cell--non-numeric">地址</th>
-                        <th>时间</th>
+                        <th>类型</th>
                         <th>最后交易</th>
-                        <th>数量</th>
-                        <th>币</th>
                     </tr>
                 </thead>
                 <tbody>

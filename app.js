@@ -28,7 +28,16 @@
         this.get('#/transactions', function () {
             // load some data
             console.log('#/transactions')
-            this.partial('templates/transaction.tpl');
+            let self = this
+            jQuery.getScript("js/transaction.js").done(() =>{
+                transactions.getList(function(err,result){
+                    console.log('result',result.TransactionQuery)
+                    self.partial('templates/transaction.tpl',{
+                          data:result.TransactionQuery
+                      })
+                })
+            })
+
         });
 
         //addresses
