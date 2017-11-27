@@ -1,4 +1,4 @@
-(function ($) {
+(function ($,window) {
     var app = $.sammy('#main', function () {
         this.use('Template', 'tpl');
 
@@ -30,7 +30,7 @@
             console.log('#/transactions')
             let self = this
             jQuery.getScript("js/transaction.js").done(() =>{
-                transactions.getList(function(err,result){
+                transactions.getList({},function(err,result){
                     console.log('result',result.TransactionQuery)
                     self.partial('templates/transaction.tpl',{
                           data:result.TransactionQuery
@@ -44,7 +44,16 @@
         this.get('#/addresses', function () {
             // load some data
             console.log('#/addresses')
-            this.partial('templates/address.tpl');
+            //this.partial('templates/address.tpl');
+            let self = this
+            jQuery.getScript("js/address.js").done(() =>{
+                transactions.getList({},function(err,result){
+                    console.log('result',result.AddressQuery)
+                    self.partial('templates/address.tpl',{
+                          data:result.AddressQuery
+                      })
+                })
+            })
         });
 
         //addresses
@@ -69,4 +78,5 @@
     })
 
     app.run('#/');
-})(jQuery)
+   
+})(jQuery,window)

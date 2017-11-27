@@ -30,3 +30,7 @@
     text-overflow: ellipsis; 
     margin-left: 2%;
 }
+
+.neo-transactions .load-more{
+    flex-direction:row-reverse
+}

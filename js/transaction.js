@@ -1,16 +1,48 @@
 (function ($,window) {
 
+    let page = 1
     console.log('transactions')
 
-    function getList(cb){
-        request(transaction_list,cb)
+    function getList(params,cb){
+        let url = transaction_list(params)
+        request(url,cb)
     }
     
+    function loadMore() {
+        console.log('loadMore','loadMore')
+        page++
+        console.log('page',page)
+        let url = transaction_list({skip:(page-1)*20,limit:20})
+        request(url,(err,result) => {
+           // console.log('result',result)
+            let html = ''
+            for (const item of result.TransactionQuery.rows) {
+                //console.log('loadMore:item',item)
+                html += `
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">RPX</td>
+                    <td>NEP5</td>
+                    <td><${item['txid'].substring(0,10)}...</td>
+                    <td>${item['to'].substring(0,10) }...</td>
+                    <td>${item['from'].substring(0,10) }...</td>
+                    <td>${item['value'] }</td>
+                    <td>${item['blockIndex'] }</td>
+                    <td>${moment(new Date(item['createdAt'])).utcOffset(16).format('YYYY-MM-DD HH:mm:ss') }</td> 
+                </tr>
+                `
+            }
+            $('#transactions tbody').append(html)
+        })
+    }
     
     
     window.transactions = {
-        getList
+        getList,
+        loadMore,
+        page
     }
+
+    
 
 })(jQuery,window)
 

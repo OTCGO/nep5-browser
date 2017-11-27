@@ -1,6 +1,6 @@
 <div class="neo-transactions mdl-grid">  
     <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--1-offset">
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+        <table id="transactions" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
             <thead>
                 <tr>
                     <th class="mdl-data-table__cell--non-numeric">名称</th>
@@ -29,6 +29,12 @@
 
             </tbody>
         </table>
+        <div class="mdl-grid load-more">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="transactions.loadMore()">
+                    加载更多
+            </button>
+        </div>
+
     </div>
 
 </div>
