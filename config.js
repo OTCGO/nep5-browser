@@ -7,7 +7,8 @@ const transaction_list = (params) => {
         method: 'post',
         data: {
             query: ` {
-                 TransactionQuery(skip:${params.skip||0},limit:${params.limit||20}){
+                 TransactionQuery(skip:${params.skip||0},limit:${params.limit||20},
+                    ${params.txid ? `txid:"${params.txid}"`:"," }){
                  count,
                  rows {
                      _id
@@ -34,7 +35,8 @@ let address_list = (params) => {
         method: 'post',
         data: {
             query: `{
-                AddressQuery(skip:${params.skip||0},limit:${params.limit||20}){
+                AddressQuery(skip:${params.skip||0},limit:${params.limit||20},
+                    ${params.txid ? `txid:"${params.txid}"`:"," }){
                   count
                   rows {
                     _id

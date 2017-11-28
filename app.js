@@ -1,4 +1,4 @@
-(function ($,window) {
+(function ($, window) {
     var app = $.sammy('#main', function () {
         this.use('Template', 'tpl');
 
@@ -29,12 +29,12 @@
             // load some data
             console.log('#/transactions')
             let self = this
-            jQuery.getScript("js/transaction.js").done(() =>{
-                transactions.getList({},function(err,result){
-                    console.log('result',result.TransactionQuery)
-                    self.partial('templates/transaction.tpl',{
-                          data:result.TransactionQuery
-                      })
+            jQuery.getScript("js/transaction.js").done(() => {
+                transactions.getList({}, function (err, result) {
+                    console.log('result', result.TransactionQuery)
+                    self.partial('templates/transaction.tpl', {
+                        data: result.TransactionQuery
+                    })
                 })
             })
 
@@ -46,14 +46,21 @@
             console.log('#/addresses')
             //this.partial('templates/address.tpl');
             let self = this
-            jQuery.getScript("js/address.js").done(() =>{
-                transactions.getList({},function(err,result){
-                    console.log('result',result.AddressQuery)
-                    self.partial('templates/address.tpl',{
-                          data:result.AddressQuery
-                      })
+            jQuery.getScript("js/address.js").done(() => {
+                transactions.getList({}, function (err, result) {
+                    console.log('result', result.AddressQuery)
+                    self.partial('templates/address.tpl', {
+                        data: result.AddressQuery
+                    })
                 })
             })
+        });
+
+        // address/:id
+        this.get('#/address/:id', function () {
+            // load some data
+            console.log('#/address/:id', this.params['id'])
+            this.partial('templates/address_id.tpl');
         });
 
         //addresses
@@ -66,9 +73,20 @@
         // tx/:id
         this.get('#/tx/hash/:id', function () {
             // load some data
-            console.log('#/tx/:id',this.params['id'] )
-            this.partial('templates/tx.tpl');
+            console.log('#/tx/:id', this.params['id'])
+            let self = this
+            let txid = this.params['id']
+            jQuery.getScript("js/transaction.js").done(() => {
+                transactions.getList({txid}, function (err, result) {
+                    console.log('result', result.TransactionQuery)
+                    self.partial('templates/tx.tpl', {
+                        data: result.TransactionQuery
+                    })
+                })
+            })
         });
+
+
 
         //addresses
         this.get('#/top', function () {
@@ -78,5 +96,5 @@
     })
 
     app.run('#/');
-   
-})(jQuery,window)
+
+})(jQuery, window)

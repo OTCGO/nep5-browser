@@ -23,8 +23,12 @@
                     <td class="mdl-data-table__cell--non-numeric">RPX</td>
                     <td>NEP5</td>
                     <td><${item['txid'].substring(0,10)}...</td>
-                    <td>${item['to'].substring(0,10) }...</td>
-                    <td>${item['from'].substring(0,10) }...</td>
+                    <td>
+                        <a href="#/address/${item['to']}">${item['to'].substring(0,10) }...</a> 
+                    </td>
+                    <td>
+                        <a href="#/address/${item['from']}">${item['from'].substring(0,10) }...</a>
+                    </td>
                     <td>${item['value'] }</td>
                     <td>${item['blockIndex'] }</td>
                     <td>${moment(new Date(item['createdAt'])).utcOffset(16).format('YYYY-MM-DD HH:mm:ss') }</td> 

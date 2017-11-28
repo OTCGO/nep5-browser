@@ -18,9 +18,15 @@
                     <tr>
                         <td class="mdl-data-table__cell--non-numeric">RPX</td>
                         <td>NEP5</td>
-                        <td><%=data.rows[i]['txid'].substring(0,10) %>...</td>
-                        <td><%=data.rows[i]['to'].substring(0,10) %>...</td>
-                        <td><%=data.rows[i]['from'].substring(0,10) %>...</td>
+                        <td>
+                            <a href="#/tx/hash/<%=data.rows[i]['txid'] %>"><%=data.rows[i]['txid'].substring(0,10) %>...</a>
+                        </td>
+                        <td>
+                            <a href="#/address/<%=data.rows[i]['to'] %>"><%=data.rows[i]['to'].substring(0,10) %>...</a>   
+                        </td>
+                        <td>
+                            <a href="#/address/<%=data.rows[i]['from'] %>"><%=data.rows[i]['from'].substring(0,10) %>...</a>   
+                        </td>
                         <td><%=data.rows[i]['value'] %></td>
                         <td><%=data.rows[i]['blockIndex'] %></td>
                         <td><%=moment(new Date(data.rows[i]['createdAt'])).utcOffset(16).format('YYYY-MM-DD HH:mm:ss') %></td> 
