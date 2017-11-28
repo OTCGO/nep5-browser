@@ -13,8 +13,14 @@ const transaction_list = (params) => {
                  rows {
                      _id
                      txid
-                     to
-                     from
+                     to{
+                        value
+                        hash
+                     }
+                     from{
+                        value
+                        hash
+                     }
                      value
                      blockIndex
                      operation
@@ -41,7 +47,10 @@ let address_list = (params) => {
                   rows {
                     _id
                     contract
-                    address
+                    address{
+                        value
+                        hash
+                    }
                     createdAt
                     updatedAt
                   }

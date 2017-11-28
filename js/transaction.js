@@ -24,10 +24,10 @@
                     <td>NEP5</td>
                     <td><${item['txid'].substring(0,10)}...</td>
                     <td>
-                        <a href="#/address/${item['to']}">${item['to'].substring(0,10) }...</a> 
+                        <a href="#/address/${item['to']['value']}">${item['to']['value'].substring(0,10) }...</a> 
                     </td>
                     <td>
-                        <a href="#/address/${item['from']}">${item['from'].substring(0,10) }...</a>
+                        <a href="#/address/${item['from']['value']}">${item['from']['value'].substring(0,10) }...</a>
                     </td>
                     <td>${item['value'] }</td>
                     <td>${item['blockIndex'] }</td>
