@@ -22,7 +22,10 @@
                 <tr>
                     <td class="mdl-data-table__cell--non-numeric">RPX</td>
                     <td>NEP5</td>
-                    <td><${item['txid'].substring(0,10)}...</td>
+                    <td>
+                        <a href="#/tx/hash/${item['txid']}">${item['txid'].substring(0,10)}...</a>
+                   
+                    </td>
                     <td>
                         <a href="#/address/${item['to']['value']}">${item['to']['value'].substring(0,10) }...</a> 
                     </td>

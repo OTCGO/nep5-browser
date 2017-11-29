@@ -1,5 +1,6 @@
 <div class="neo-transactions mdl-grid">  
         <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--1-offset">
+            <h6>txid:<%=data.rows[0]['txid'] || '' %></h6>
             <table id="transactions" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                 <thead>
                     <tr>
@@ -20,10 +21,10 @@
                             <td>NEP5</td>
                             <td><%=data.rows[i]['txid'].substring(0,10) %>...</td>
                             <td>
-                                <a href="#/address/<%=data.rows[i]['to'] %>"><%=data.rows[i]['to'].substring(0,10) %>...</a>   
+                                <a href="#/address/<%=data.rows[i]['to']['value'] %>"><%=data.rows[i]['to']['value'].substring(0,10) %>...</a>   
                             </td>
                             <td>
-                                <a href="#/address/<%=data.rows[i]['from'] %>"><%=data.rows[i]['from'].substring(0,10) %>...</a>   
+                                <a href="#/address/<%=data.rows[i]['from']['value'] %>"><%=data.rows[i]['from']['value'].substring(0,10) %>...</a>   
                             </td>
                             <td><%=data.rows[i]['value'] %></td>
                             <td><%=data.rows[i]['blockIndex'] %></td>

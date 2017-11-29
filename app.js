@@ -14,7 +14,15 @@
         this.get('#/assets', function () {
             // load some data
             console.log('#/assets')
-            this.partial('templates/asset.tpl');
+            let self = this
+            jQuery.getScript("js/asset.js").done(() => {
+                assets.getList({}, function (err, result) {
+                    console.log('result', result.AssetQuery)
+                    self.partial('templates/asset.tpl', {
+                        data: result.AssetQuery
+                    })
+                })
+            })
         });
 
         //blocks
@@ -95,6 +103,6 @@
         });
     })
 
-    app.run('#/');
+    app.run('#/transactions');
 
 })(jQuery, window)

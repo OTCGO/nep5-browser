@@ -8,7 +8,7 @@ const transaction_list = (params) => {
         data: {
             query: ` {
                  TransactionQuery(skip:${params.skip||0},limit:${params.limit||20},
-                    ${params.txid ? `txid:"${params.txid}"`:"," }){
+                    ${params.txid ? `txid:"${params.txid}"`:"," }${params.search ? `txid:"${params.search}"`:"," }){
                  count,
                  rows {
                      _id
@@ -42,11 +42,12 @@ let address_list = (params) => {
         data: {
             query: `{
                 AddressQuery(skip:${params.skip||0},limit:${params.limit||20},
-                    ${params.txid ? `txid:"${params.txid}"`:"," }){
+                    ${params.symbol ? `txid:"${params.symbol}"`:"," }){
                   count
                   rows {
                     _id
                     contract
+                    symbol
                     address{
                         value
                         hash
@@ -56,6 +57,28 @@ let address_list = (params) => {
                   }
                 }
               }`
+        }
+    }
+}
+
+
+let asset_list = (params) => {
+    return {
+        url: `${root_url}/api/v1/nep5/public/graphql`,
+        method: 'post',
+        data: {
+            query: `{
+                    AssetQuery(skip:${params.skip||0},limit:${params.limit||20}){
+                      rows {
+                        _id
+                        contract
+                        symbol
+                        createdAt
+                        updatedAt
+                      }
+                      count
+                    }
+                }`
         }
     }
 }
