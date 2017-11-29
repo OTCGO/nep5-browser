@@ -17,14 +17,16 @@
                             <%=data.rows[i]['symbol'] || '' %>
                         </td>
                         <td class="mdl-data-table__cell--non-numeric">
-                            <a href="#/address/<%=data.rows[i]['address']['value']%>"><%=data.rows[i]['address']['value'] || '' %></a>
+                            <a href="#/address/<%=data.rows[i]['address']['value']%>/<%=data.rows[i]['address']['hash']%>/<%=data.rows[i]['contract']%>">
+                                <%=data.rows[i]['address']['value'] || '' %>
+                            </a>
                         </td>
                     </tr>
                     <% } %>
             </tbody>
         </table>
         <div class="mdl-grid load-more">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="transactions.loadMore()">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="addresses.loadMore()">
                     加载更多
             </button>
         </div>

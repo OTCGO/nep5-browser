@@ -55,7 +55,7 @@
             //this.partial('templates/address.tpl');
             let self = this
             jQuery.getScript("js/address.js").done(() => {
-                transactions.getList({}, function (err, result) {
+                addresses.getList({}, function (err, result) {
                     console.log('result', result.AddressQuery)
                     self.partial('templates/address.tpl', {
                         data: result.AddressQuery
@@ -65,10 +65,24 @@
         });
 
         // address/:id
-        this.get('#/address/:id', function () {
-            // load some data
-            console.log('#/address/:id', this.params['id'])
-            this.partial('templates/address_id.tpl');
+        this.get('#/address/:address/:hash/:contract', function () {
+            // load some dat
+            console.log('#/address/:address', this.params['hash'])
+           // this.partial('templates/address_id.tpl');
+            let self = this
+            let {hash,contract,address}  = this.params
+            jQuery.getScript("js/address.js").done(() => {
+                addresses.getBalanceOf({
+                    address:hash,
+                    contract:contract,
+                }, function (err, result) {
+                    console.log('result', result)
+                    self.partial('templates/address_id.tpl', {
+                        data: result,
+                        address: address
+                    })
+                })
+            })
         });
 
         //addresses
@@ -76,6 +90,7 @@
             // load some data
             console.log('#/contracts')
             this.partial('templates/contract.tpl');
+            
         });
 
         // tx/:id

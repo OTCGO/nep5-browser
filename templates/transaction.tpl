@@ -22,10 +22,14 @@
                             <a href="#/tx/hash/<%=data.rows[i]['txid'] %>"><%=data.rows[i]['txid'].substring(0,10) %>...</a>
                         </td>
                         <td>
-                            <a href="#/address/<%=data.rows[i]['to']['value'] %>"><%=data.rows[i]['to']['value'].substring(0,10) %>...</a>   
+                            <a href="#/address/<%=data.rows[i]['to']['value'] %>/<%=data.rows[i]['to']['hash']%>/<%=data.rows[i]['contract'] %>">
+                                <%=data.rows[i]['to']['value'].substring(0,10) %>...
+                            </a>   
                         </td>
                         <td>
-                            <a href="#/address/<%=data.rows[i]['from']['value'] %>"><%=data.rows[i]['from']['value'].substring(0,10) %>...</a>   
+                            <a href="#/address/<%=data.rows[i]['from']['value'] %>/<%=data.rows[i]['from']['hash']%>/<%=data.rows[i]['contract'] %>">
+                                <%=data.rows[i]['from']['value'].substring(0,10) %>...
+                            </a>   
                         </td>
                         <td><%=data.rows[i]['value'] %></td>
                         <td><%=data.rows[i]['blockIndex'] %></td>

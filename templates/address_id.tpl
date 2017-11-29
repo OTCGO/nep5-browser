@@ -5,14 +5,14 @@
             <div class="mdl-card__title mdl-card--expand">
                 <h4>
                     地址：
-                    <br> AVTRxJ8Jk4Wy3SVTv2DZi193z3zkeHUdXv
+                    <br> <%=address %>
 
                 </h4>
             </div>
             <div class="mdl-card__actions mdl-card--border">
-                <span>数量：133333333333</span>
+                <span>数量：<%=data.value %></span>
                 <div class="mdl-layout-spacer"></div>
-                <span>RPX</span>
+                <span><%=data.symbol %></span>
             </div>
         </div>
     </div>
