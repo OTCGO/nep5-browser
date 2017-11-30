@@ -10,7 +10,7 @@
 
 function request(params,callback){
     $.ajax(params).then((result)=>{
-        callback(null,result.data)
+        callback(null,result.data || result)
       //  return result.data
     }).catch((err) =>{
         callback(err)

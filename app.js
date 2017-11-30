@@ -7,7 +7,8 @@
         this.get('#/', function () {
             // load some data
             console.log('#/')
-            this.partial('templates/home.tpl');
+            //this.partial('templates/home.tpl');
+            this.redirect('#/transactions');
         });
 
         //assets
@@ -65,21 +66,19 @@
         });
 
         // address/:id
-        this.get('#/address/:address/:hash/:contract', function () {
+        this.get('#/address/:address', function () {
             // load some dat
             console.log('#/address/:address', this.params['hash'])
            // this.partial('templates/address_id.tpl');
             let self = this
-            let {hash,contract,address}  = this.params
+            let {address}  = this.params
             jQuery.getScript("js/address.js").done(() => {
                 addresses.getBalanceOf({
-                    address:hash,
-                    contract:contract,
+                    address:address,
                 }, function (err, result) {
                     console.log('result', result)
                     self.partial('templates/address_id.tpl', {
-                        data: result,
-                        address: address
+                        data: result ? JSON.parse(result) :""
                     })
                 })
             })

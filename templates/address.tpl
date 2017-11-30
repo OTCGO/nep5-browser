@@ -17,7 +17,7 @@
                             <%=data.rows[i]['symbol'] || '' %>
                         </td>
                         <td class="mdl-data-table__cell--non-numeric">
-                            <a href="#/address/<%=data.rows[i]['address']['value']%>/<%=data.rows[i]['address']['hash']%>/<%=data.rows[i]['contract']%>">
+                            <a href="#/address/<%=data.rows[i]['address']['value']%>">
                                 <%=data.rows[i]['address']['value'] || '' %>
                             </a>
                         </td>

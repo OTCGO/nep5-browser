@@ -27,12 +27,12 @@
                    
                     </td>
                     <td>
-                        <a href="#/address/${item['to']['value']}/${item['to']['hash']}/${item['contract']}">
+                        <a href="#/address/${item['to']['value']}">
                             ${item['to']['value'].substring(0,10) }...
                         </a> 
                     </td>
                     <td>
-                        <a href="#/address/${item['from']['value']}/${item['from']['hash']}/${item['contract']}">${item['from']['value'].substring(0,10) }...</a>
+                        <a href="#/address/${item['from']['value']}">${item['from']['value'].substring(0,10) }...</a>
                     </td>
                     <td>${item['value'] }</td>
                     <td>${item['blockIndex'] }</td>

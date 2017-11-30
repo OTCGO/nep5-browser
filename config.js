@@ -1,5 +1,5 @@
 let root_url = 'http://114.215.30.71:4001'
-
+let otcgo_url = 'https://api.otcgo.cn'
 
 const transaction_list = (params) => {
     return {
@@ -86,11 +86,15 @@ let asset_list = (params) => {
  // address BalanceOf 
 let get_balanceof = (params) => {
     return {
-        url: `${root_url}/api/v1/nep5/address/balanceOf`,
-        method: 'post',
-        data: {
-            'address':params.address,
-            'contract':params.contract,
-        }
+        url: `${otcgo_url}/mainnet/address/${params.address}`,
+        method: 'get'
     }
+}
+
+
+let assets_banaceof_list  = {
+    "ecc6b20d3ccac1ee9ef109af5a7cdb85706b1df9":"RPX",
+    "a52e3e99b6c2dd2312a94c635c050b4c2bc2485fcb924eecb615852bd534a63f":"申一币",
+    "602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7":"GAS",
+    "c56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b":"NEO"
 }

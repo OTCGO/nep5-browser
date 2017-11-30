@@ -27,7 +27,7 @@
                             <td class="mdl-data-table__cell--non-numeric">NEP5</td>
                             <td class="mdl-data-table__cell--non-numeric">${item['symbol']}</td>
                             <td class="mdl-data-table__cell--non-numeric">
-                                <a href="#/address/${item['address']['value']}/${item['address']['hash']}/${item['contract']}">
+                                <a href="#/address/${item['address']['value']}/">
                                 ${item['address']['value']} || ''
                                  </a>
                             </td>

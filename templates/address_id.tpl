@@ -5,15 +5,17 @@
             <div class="mdl-card__title mdl-card--expand">
                 <h4>
                     地址：
-                    <br> <%=address %>
+                    <br> <%=data._id %>
 
                 </h4>
             </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <span>数量：<%=data.value %></span>
-                <div class="mdl-layout-spacer"></div>
-                <span><%=data.symbol %></span>
-            </div>
+            <% for ( let key in  data.balances) { %>
+                <div class="mdl-card__actions mdl-card--border">
+                    <span>数量：<%=data.balances[key] %></span>
+                    <div class="mdl-layout-spacer"></div>
+                    <span><%=assets_banaceof_list[key] %></span>
+                </div>
+            <% } %>   
         </div>
     </div>
 </div>
