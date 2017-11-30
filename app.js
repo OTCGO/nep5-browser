@@ -36,10 +36,11 @@
         //transactions
         this.get('#/transactions', function () {
             // load some data
-            console.log('#/transactions')
+            console.log('#/transactions',this.params.search)
             let self = this
+            let search = this.params['search']
             jQuery.getScript("js/transaction.js").done(() => {
-                transactions.getList({}, function (err, result) {
+                transactions.getList({search}, function (err, result) {
                     console.log('result', result.TransactionQuery)
                     self.partial('templates/transaction.tpl', {
                         data: result.TransactionQuery
@@ -48,6 +49,22 @@
             })
 
         });
+
+        // //transactions
+        // this.get('#/transactions/:search', function () {
+        //     // load some data
+        //     console.log('#/transactions')
+        //     let self = this
+        //     let search = this.params['search']
+        //     jQuery.getScript("js/transaction.js").done(() => {
+        //         transactions.getList({search}, function (err, result) {
+        //             console.log('result', result.TransactionQuery)
+        //             self.partial('templates/transaction.tpl', {
+        //                 data: result.TransactionQuery
+        //             })
+        //         })
+        //     })
+        // });
 
         //addresses
         this.get('#/addresses', function () {
@@ -118,5 +135,7 @@
     })
 
     app.run('#/transactions');
+
+
 
 })(jQuery, window)

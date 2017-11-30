@@ -2,13 +2,14 @@ let root_url = 'http://114.215.30.71:4001'
 let otcgo_url = 'https://api.otcgo.cn'
 
 const transaction_list = (params) => {
+    console.log('transaction_list',params)
     return {
         url: `${root_url}/api/v1/nep5/public/graphql`,
         method: 'post',
         data: {
             query: ` {
                  TransactionQuery(skip:${params.skip||0},limit:${params.limit||20},
-                    ${params.txid ? `txid:"${params.txid}"`:"," }${params.search ? `txid:"${params.search}"`:"," }){
+                    ${params.txid ? `txid:"${params.txid}"`:"," }${params.search ? `search:"${params.search}"`:"," }){
                  count,
                  rows {
                      _id
