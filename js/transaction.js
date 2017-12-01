@@ -36,7 +36,7 @@
                     </td>
                     <td>${item['value'] }</td>
                     <td>${item['blockIndex'] }</td>
-                    <td>${moment(new Date(item['createdAt'])).utcOffset(16).format('YYYY-MM-DD HH:mm:ss') }</td> 
+                    <td>${moment(new Date(item['createdAt'])).format('YYYY-MM-DD HH:mm:ss') }</td> 
                 </tr>
                 `
             }

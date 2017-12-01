@@ -33,7 +33,7 @@
                         </td>
                         <td><%=data.rows[i]['value'] %></td>
                         <td><%=data.rows[i]['blockIndex'] %></td>
-                        <td><%=moment(new Date(data.rows[i]['createdAt'])).utcOffset(16).format('YYYY-MM-DD HH:mm:ss') %></td> 
+                        <td><%=moment(new Date(data.rows[i]['createdAt'])).format('YYYY-MM-DD HH:mm:ss') %></td> 
                     </tr>
                 <% } %>
 
