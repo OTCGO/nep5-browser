@@ -2,6 +2,8 @@
     var app = $.sammy('#main', function () {
         this.use('Template', 'tpl');
 
+        
+
         // define a 'route'
         // home 
         this.get('#/', function () {
@@ -14,6 +16,7 @@
         //assets
         this.get('#/assets', function () {
             // load some data
+            loadingToggle()
             console.log('#/assets')
             let self = this
             jQuery.getScript("js/asset.js").done(() => {
@@ -22,6 +25,7 @@
                     self.partial('templates/asset.tpl', {
                         data: result.AssetQuery
                     })
+                    loadingToggle()
                 })
             })
         });
@@ -36,6 +40,7 @@
         //transactions
         this.get('#/transactions', function () {
             // load some data
+            loadingToggle()
             console.log('#/transactions',this.params.search)
             let self = this
             let search = this.params['search']
@@ -45,6 +50,7 @@
                     self.partial('templates/transaction.tpl', {
                         data: result.TransactionQuery
                     })
+                    loadingToggle()
                 })
             })
 
@@ -70,6 +76,7 @@
         this.get('#/addresses', function () {
             // load some data
             console.log('#/addresses')
+            loadingToggle()
             //this.partial('templates/address.tpl');
             let self = this
             jQuery.getScript("js/address.js").done(() => {
@@ -78,6 +85,7 @@
                     self.partial('templates/address.tpl', {
                         data: result.AddressQuery
                     })
+                    loadingToggle()
                 })
             })
         });
@@ -85,6 +93,7 @@
         // address/:id
         this.get('#/address/:address', function () {
             // load some dat
+            loadingToggle()
             console.log('#/address/:address', this.params['hash'])
            // this.partial('templates/address_id.tpl');
             let self = this
@@ -97,6 +106,7 @@
                     self.partial('templates/address_id.tpl', {
                         data: result ? JSON.parse(result) :""
                     })
+                    loadingToggle()
                 })
             })
         });
@@ -112,15 +122,17 @@
         // tx/:id
         this.get('#/tx/hash/:id', function () {
             // load some data
+            loadingToggle()
             console.log('#/tx/:id', this.params['id'])
             let self = this
             let txid = this.params['id']
             jQuery.getScript("js/transaction.js").done(() => {
                 transactions.getList({txid}, function (err, result) {
-                    console.log('result', result.TransactionQuery)
+                    // console.log('result', result.TransactionQuery)
                     self.partial('templates/tx.tpl', {
                         data: result.TransactionQuery.rows[0] || ''
                     })
+                    loadingToggle()
                 })
             })
         });
@@ -136,6 +148,11 @@
 
     app.run('#/transactions');
 
+    
 
+    function loadingToggle(){
+        $('#loading').loading('toggle');
+    }
+    
 
 })(jQuery, window)

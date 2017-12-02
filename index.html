@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="https://cdn.bootcss.com/material-design-lite/1.3.0/material.min.css" rel="stylesheet">
     <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/jquery-loading/dist/jquery.loading.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" rel="stylesheet">
 
 
@@ -135,7 +136,7 @@
             </nav>
         </div>
 
-        <div class="neo-content mdl-layout__content">
+        <div id="loading" class="neo-content mdl-layout__content">
             <a name="top"></a>
             <div id="main"></div>
 
@@ -168,12 +169,15 @@
             </footer>
         </div>
     </div>
+    <!-- MDL Spinner Component -->
+    
     <a href="https://github.com/OTCGO/neo-browser" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
     <script src="https://cdn.bootcss.com/material-design-lite/1.3.0/material.min.js"></script>
     <script src="https://cdn.bootcss.com/highcharts/6.0.1/highcharts.js"></script>
     <script src="https://cdn.bootcss.com/moment.js/2.19.2/moment.min.js"></script>
     <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/sammy.js/0.7.6/sammy.min.js"></script>
+    <script src="lib/jquery-loading/dist/jquery.loading.js"></script>
     <script src="utils/request.js"></script>
     <script src="lib/sammy.template.js"></script>
     <script src="config.js"></script>
