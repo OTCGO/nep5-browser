@@ -13,7 +13,7 @@
             <tbody>
                 <% for ( let i = 0; i < data.rows.length; i++ ) { %>
                     <tr>
-                        <td class="mdl-data-table__cell--non-numeric">RPX</td>
+                        <td class="mdl-data-table__cell--non-numeric"><%=data.rows[i]['symbol'] %></td>
                         <!-- <td>NEP5</td> -->
                         <td class="mdl-data-table__cell--non-numeric">
                             <a href="#/tx/hash/<%=data.rows[i]['txid'] %>"><%=data.rows[i]['txid'] %></a>

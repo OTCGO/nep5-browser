@@ -26,6 +26,7 @@ const transaction_list = (params) => {
                      blockIndex
                      operation
                      contract
+                     symbol
                      createdAt
                      updatedAt
                      } 

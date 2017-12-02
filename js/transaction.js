@@ -36,7 +36,7 @@
                  } 
                 html += `
                 <tr>
-                    <td class="mdl-data-table__cell--non-numeric">RPX</td>
+                    <td class="mdl-data-table__cell--non-numeric">${item['symbol']}</td>
                     <td class="mdl-data-table__cell--non-numeric">
                         <a href="#/tx/hash/${item['txid']}">${item['txid']}</a>
                     </td>
