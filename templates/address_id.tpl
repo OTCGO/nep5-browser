@@ -4,7 +4,7 @@
         <div class="demo-card-event mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title mdl-card--expand">
                 <h4>
-                    <%=data._id %>
+                    <%=data._id || '无资源信息' %>
 
                 </h4>
             </div>
