@@ -1,50 +1,90 @@
-<div class="neo-transactions mdl-grid">  
-        <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--1-offset">
-            <h6>txid:<%=data.rows[0]['txid'] || '' %></h6>
-            <table id="transactions" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-                <thead>
-                    <tr>
-                        <th class="mdl-data-table__cell--non-numeric">名称</th>
-                        <th>类型</th>
-                        <th>txid</th>
-                        <th>转入地址</th>
-                        <th>转出地址</th>
-                        <th>数量</th>
-                        <th>区块索引</th>
-                        <th>交易时间</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% for ( let i = 0; i < data.rows.length; i++ ) { %>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">RPX</td>
-                            <td>NEP5</td>
-                            <td><%=data.rows[i]['txid'].substring(0,10) %>...</td>
-                            <td>
-                                <a href="#/address/<%=data.rows[i]['to']['value'] %>"><%=data.rows[i]['to']['value'].substring(0,10) %>...</a>   
-                            </td>
-                            <td>
-                                <a href="#/address/<%=data.rows[i]['from']['value'] %>"><%=data.rows[i]['from']['value'].substring(0,10) %>...</a>   
-                            </td>
-                            <td><%=data.rows[i]['value'] %></td>
-                            <td><%=data.rows[i]['blockIndex'] %></td>
-                            <td><%=moment(new Date(data.rows[i]['createdAt'])).utcOffset(16).format('YYYY-MM-DD HH:mm:ss') %></td> 
-                        </tr>
-                    <% } %>
-    
-                </tbody>
-            </table>
-            <div class="mdl-grid load-more">
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="transactions.loadMore()">
-                        加载更多
-                </button>
+<div class="neo-address_id mdl-grid">
+    <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--1-offset">
+
+        <div class="demo-card-event mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title mdl-card--expand">
+                <h4>
+                    <%=data['txid'] %>
+                </h4>
             </div>
-    
+            <div class="mdl-card__actions mdl-card--border">
+                <span>名称： </span>
+                
+                <div class="mdl-layout-spacer"></div>
+                <span>RPX</span>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <span>类型： </span>
+                
+                <div class="mdl-layout-spacer"></div>
+                <span>NEP5</span>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <span>转入地址： </span>
+                
+                <div class="mdl-layout-spacer"></div>
+                <span> <a href="/#/address/<%=data['to']['value']%>"><%=data['to']['value']%></a></span>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <span>转出地址： </span>
+                
+                <div class="mdl-layout-spacer"></div>
+                <span> <a href="/#/address/<%=data['from']['value']%>"><%=data['from']['value']%></a></span>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <span>数量： </span>
+                <div class="mdl-layout-spacer"></div>
+                <span><%=data['value']%></span>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <span>区块索引： </span>
+               
+                <div class="mdl-layout-spacer"></div>
+                <span><%=data['blockIndex'] %></span>
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <span>交易时间： </span>
+               
+                <div class="mdl-layout-spacer"></div>
+                <span><%=moment(new Date(data['createdAt'])).format('YYYY-MM-DD HH:mm:ss') %></span>
+            </div>
         </div>
-    
     </div>
-    
-    
-    <link rel="stylesheet" href="css/transaction.css" />
-    
-    
+</div>
+
+
+<style>
+    .demo-card-event.mdl-card {
+        width: 100%;
+        height: 400px;
+        background: #46B6AC;
+    }
+
+    .demo-card-event>.mdl-card__actions {
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .demo-card-event>.mdl-card__title {
+        align-items: flex-start;
+    }
+
+    .demo-card-event>.mdl-card__title>h4 {
+        margin-top: 0;
+    }
+
+    .demo-card-event>.mdl-card__actions {
+        display: flex;
+        box-sizing: border-box;
+        align-items: center;
+    }
+
+    .demo-card-event>.mdl-card__actions>.material-icons {
+        padding-right: 10px;
+    }
+
+    .demo-card-event>.mdl-card__title,
+    .demo-card-event>.mdl-card__actions,
+    .demo-card-event>.mdl-card__actions>.mdl-button {
+        color: #fff;
+    }
+</style>

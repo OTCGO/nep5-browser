@@ -16,27 +16,31 @@
         request(url,(err,result) => {
            // console.log('result',result)
             let html = ''
+            let time = new Date();
             for (const item of result.TransactionQuery.rows) {
                 //console.log('loadMore:item',item)
+                let tran_time = ''
+                if(moment(time).diff(moment(new Date(item['createdAt'])), 'seconds') <= 60){
+                    tran_time = moment(time).diff(moment(new Date(item['createdAt'])), 'seconds')+'秒前'
+                }
+                if(moment(time).diff(moment(new Date(item['createdAt'])), 'minutes') <= 60){ 
+                    tran_time=moment(time).diff(moment(new Date(item['createdAt'])), 'minutes')+'分钟前'
+                } 
+                if(moment(time).diff(moment(new Date(item['createdAt'])), 'hours') <= 24){ 
+                    tran_time=moment(time).diff(moment(new Date(item['createdAt'])), 'hours')+'小时前' 
+                 } 
+                if(moment(time).diff(moment(new Date(item['createdAt'])), 'days') <= 30){ 
+                    tran_time=moment(time).diff(moment(new Date(item['createdAt'])), 'days')+'天前' 
+                 }else{           
+                    tran_time=moment(new Date(item['createdAt'])).format('YYYY-MM-DD')  
+                 } 
                 html += `
                 <tr>
                     <td class="mdl-data-table__cell--non-numeric">RPX</td>
-                    <td>NEP5</td>
-                    <td>
-                        <a href="#/tx/hash/${item['txid']}">${item['txid'].substring(0,10)}...</a>
-                   
+                    <td class="mdl-data-table__cell--non-numeric">
+                        <a href="#/tx/hash/${item['txid']}">${item['txid']}</a>
                     </td>
-                    <td>
-                        <a href="#/address/${item['to']['value']}">
-                            ${item['to']['value'].substring(0,10) }...
-                        </a> 
-                    </td>
-                    <td>
-                        <a href="#/address/${item['from']['value']}">${item['from']['value'].substring(0,10) }...</a>
-                    </td>
-                    <td>${item['value'] }</td>
-                    <td>${item['blockIndex'] }</td>
-                    <td>${moment(new Date(item['createdAt'])).format('YYYY-MM-DD HH:mm:ss') }</td> 
+                    <td>${tran_time}</td>
                 </tr>
                 `
             }
@@ -44,6 +48,10 @@
         })
     }
     
+
+
+
+
     
     window.transactions = {
         getList,
