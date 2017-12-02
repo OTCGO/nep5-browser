@@ -1,5 +1,5 @@
 <div class="neo-address_id mdl-grid">
-    <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--1-offset">
+    <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--1-offset-desktop mdl-cell--1-offset-tablet">
 
         <div class="demo-card-event mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title mdl-card--expand">

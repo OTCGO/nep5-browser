@@ -26,7 +26,7 @@
                         <tr>
                             <td class="mdl-data-table__cell--non-numeric">NEP5</td>
                             <td class="mdl-data-table__cell--non-numeric">${item['symbol']}</td>
-                            <td class="mdl-data-table__cell--non-numeric">
+                            <td class="mdl-data-table__cell--non-numeric ellipsis">
                                 <a href="#/address/${item['address']['value']}">
                                 ${item['address']['value']}
                                  </a>

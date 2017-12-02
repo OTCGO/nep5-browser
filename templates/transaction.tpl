@@ -1,5 +1,5 @@
 <div class="neo-transactions mdl-grid">  
-    <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--1-offset">
+    <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--12-col-phone mdl-cell--1-offset-desktop mdl-cell--1-offset-tablet">
         <table id="transactions" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
             <thead>
                 <tr>
@@ -15,7 +15,7 @@
                     <tr>
                         <td class="mdl-data-table__cell--non-numeric"><%=data.rows[i]['symbol'] %></td>
                         
-                        <td class="mdl-data-table__cell--non-numeric">
+                        <td class="mdl-data-table__cell--non-numeric ellipsis">
                             <a href="#/tx/hash/<%=data.rows[i]['txid'] %>"><%=data.rows[i]['txid'] %></a>
                         </td>
 

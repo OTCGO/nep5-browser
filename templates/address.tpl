@@ -1,5 +1,5 @@
 <div class="neo-addresses mdl-grid">
-    <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--1-offset">
+    <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--1-offset-desktop mdl-cell--1-offset-tablet">
         <table id='addresses' class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
             <thead>
                 <tr>
@@ -16,7 +16,7 @@
                         <td class="mdl-data-table__cell--non-numeric">
                             <%=data.rows[i]['symbol'] || '' %>
                         </td>
-                        <td class="mdl-data-table__cell--non-numeric">
+                        <td class="mdl-data-table__cell--non-numeric ellipsis">
                             <a href="#/address/<%=data.rows[i]['address']['value']%>">
                                 <%=data.rows[i]['address']['value'] || '' %>
                             </a>

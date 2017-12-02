@@ -1,10 +1,10 @@
 <div class="neo-assets mdl-grid">  
-    <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--1-offset">
+    <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet  mdl-cell--1-offset-desktop mdl-cell--1-offset-tablet">
         <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
             <thead>
                 <tr>
                     <th class="mdl-data-table__cell--non-numeric">名称</th>
-                    <th>标识</th>
+                    <th class="mdl-data-table__cell--non-numeric">标识</th>
                     <th>类型</th>
                     <!-- <th>总量</th>
                     <th>总量</th>
@@ -17,7 +17,7 @@
                 <% for ( let i = 0; i < data.rows.length; i++ ) { %>
                     <tr>
                         <td class="mdl-data-table__cell--non-numeric"><%=data.rows[i]['symbol'] || '' %></td>
-                        <td >
+                        <td class="mdl-data-table__cell--non-numeric ellipsis">
                             <%=data.rows[i]['contract'] || '' %>
                         </td>
                         <td >

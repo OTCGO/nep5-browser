@@ -1,5 +1,5 @@
 <div class="neo-blocks mdl-grid">  
-        <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--1-offset">
+        <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--1-offset-desktop mdl-cell--1-offset-tablet">
             <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                 <thead>
                     <tr>

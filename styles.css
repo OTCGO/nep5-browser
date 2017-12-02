@@ -24,6 +24,7 @@ a {
   color: #8bc34a;
 }
 
+
 /* Disable ugly boxes around images in IE10 */
 
 ::-moz-selection {
@@ -225,9 +226,13 @@ a {
   }
 }
 
-
 .mdl-data-table {
-  table-layout:fixed;
-  width:100%; 
+  table-layout: fixed;
+  width: 100%;
 }
 
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
