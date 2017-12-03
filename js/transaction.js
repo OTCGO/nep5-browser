@@ -40,7 +40,7 @@
                     <td class="mdl-data-table__cell--non-numeric ellipsis">
                         <a href="#/tx/hash/${item['txid']}">${item['txid']}</a>
                     </td>
-                    <td class="mdl-data-table__cell--non-numeric" >${item['blockIndex']}}</td>
+                    <td class="mdl-data-table__cell--non-numeric" >${item['blockIndex']}</td>
                     <td class="mdl-data-table__cell--non-numeric" >${tran_time}</td>
                 </tr>
                 `
