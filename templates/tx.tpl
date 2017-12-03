@@ -11,7 +11,7 @@
                 <span>名称： </span>
                 
                 <div class="mdl-layout-spacer"></div>
-                <span>RPX</span>
+                <span><%=data['symbol']%></span>
             </div>
             <div class="mdl-card__actions mdl-card--border">
                 <span>类型： </span>
