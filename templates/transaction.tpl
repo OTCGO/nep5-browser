@@ -7,7 +7,7 @@
                     
                     <th class="mdl-data-table__cell--non-numeric">txid</th>
                     <th class="mdl-data-table__cell--non-numeric" style="width:100px">区块</th>
-                    <th class="mdl-data-table__cell--non-numeric" style="width:100px">交易时间</th>
+                    <th class="mdl-data-table__cell--non-numeric" style="width:100px">时间(非交易时间)</th>
                 </tr>
             </thead>
             <tbody>
