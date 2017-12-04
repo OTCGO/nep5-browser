@@ -17,22 +17,25 @@
            // console.log('result',result)
             let html = ''
             let time = new Date();
+            
             for (const item of result.TransactionQuery.rows) {
                 //console.log('loadMore:item',item)
+                
                 let tran_time = ''
-                if(moment(time).diff(moment(new Date(item['createdAt'])), 'seconds') <= 60){
-                    tran_time = moment(time).diff(moment(new Date(item['createdAt'])), 'seconds')+'秒前'
+                let blockTime  = moment.unix(item['createdAt']);
+                if(moment(time).diff(blockTime, 'seconds') <= 60){
+                    tran_time = moment(time).diff(blockTime, 'seconds')+'秒前'
                 }
-                else if(0 < moment(time).diff(moment(new Date(item['createdAt'])), 'minutes') && moment(time).diff(moment(new Date(item['createdAt'])), 'minutes') <= 60  ){ 
-                    tran_time=moment(time).diff(moment(new Date(item['createdAt'])), 'minutes')+'分钟前'
+                else if(0 < moment(time).diff(blockTime, 'minutes') && moment(time).diff(blockTime, 'minutes') <= 60  ){ 
+                    tran_time=moment(time).diff(blockTime, 'minutes')+'分钟前'
                 } 
-                else if(0< moment(time).diff(moment(new Date(item['createdAt'])), 'hours') && moment(time).diff(moment(new Date(item['createdAt'])), 'hours') <= 24){ 
-                    tran_time=moment(time).diff(moment(new Date(item['createdAt'])), 'hours')+'小时前' 
+                else if(0< moment(time).diff(blockTime, 'hours') && moment(time).diff(blockTime, 'hours') <= 24){ 
+                    tran_time=moment(time).diff(blockTime, 'hours')+'小时前' 
                  } 
-                 else if(0 < moment(time).diff(moment(new Date(item['createdAt'])), 'days') && moment(time).diff(moment(new Date(item['createdAt'])), 'days') <= 30){ 
-                    tran_time=moment(time).diff(moment(new Date(item['createdAt'])), 'days')+'天前' 
+                 else if(0 < moment(time).diff(blockTime, 'days') && moment(time).diff(blockTime, 'days') <= 30){ 
+                    tran_time=moment(time).diff(blockTime, 'days')+'天前' 
                  }else{           
-                    tran_time=moment(new Date(item['createdAt'])).format('YYYY-MM-DD')  
+                    tran_time=blockTime.format('YYYY-MM-DD')  
                  } 
                 html += `
                 <tr>
