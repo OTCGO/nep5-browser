@@ -99,6 +99,6 @@ let assets_banaceof_list  = {
     "a52e3e99b6c2dd2312a94c635c050b4c2bc2485fcb924eecb615852bd534a63f":"申一币",
     "602c79718b16e442de58778e148d0b1084e3b2dffd5de6b7b16cee7969282de7":"GAS",
     "c56f33fc6ecfcd0c225c4ab356fee59390af8560be0e930faebe74a6daff7c9b":"NEO",
-    "a0777c3ce2b169d4a23bcba4565e3225a0122d95":"APH(1)",
-    "6d36b38af912ca107f55a5daedc650054f7e4f75":"APH(2)"
+    "a0777c3ce2b169d4a23bcba4565e3225a0122d95":"APH",
+    "6d36b38af912ca107f55a5daedc650054f7e4f75":"APH"
 }

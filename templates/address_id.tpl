@@ -15,7 +15,7 @@
                     </span>
                     <div class="mdl-layout-spacer"></div>
                     <span>
-                        <%=assets_banaceof_list[key] %>
+                        <%=assets_banaceof_list[key] + '(' + key.substring(0,5)+')' %>
                     </span>
                 </div>
                 <% } %>
