@@ -46,7 +46,7 @@
                 <span>交易时间： </span>
                
                 <div class="mdl-layout-spacer"></div>
-                <span><%=moment(new Date(data['createdAt'])).format('YYYY-MM-DD HH:mm:ss') %></span>
+                <span><%=moment.unix(data['createdAt']).format('YYYY-MM-DD HH:mm:ss') %></span>
             </div>
         </div>
     </div>
