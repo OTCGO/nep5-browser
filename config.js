@@ -102,3 +102,5 @@ let assets_banaceof_list  = {
     "a0777c3ce2b169d4a23bcba4565e3225a0122d95":"APH",
     "6d36b38af912ca107f55a5daedc650054f7e4f75":"APH"
 }
+
+let socket_url = 'http://114.215.30.71:4002'

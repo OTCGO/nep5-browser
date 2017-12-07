@@ -40,19 +40,32 @@
         //transactions
         this.get('#/transactions', function () {
             // load some data
-            loadingToggle()
+            
             console.log('#/transactions',this.params.search)
             let self = this
             let search = this.params['search']
-            jQuery.getScript("js/transaction.js").done(() => {
-                transactions.getList({search}, function (err, result) {
-                    console.log('result', result.TransactionQuery)
-                    self.partial('templates/transaction.tpl', {
-                        data: result.TransactionQuery
-                    })
+
+            let render = function(){
+                return () => {
                     loadingToggle()
-                })
+                    jQuery.getScript("js/transaction.js").done(() => {
+                        transactions.getList({}, function (err, result) {
+                            console.log('result', result.TransactionQuery)
+                            self.partial('templates/transaction.tpl', {
+                                data: result.TransactionQuery
+                            })
+                            loadingToggle()
+                        })
+                    })
+                }
+            }
+
+            socket.on('transaction', (data) => {
+                console.log('socket transaction',data)
+                render()()
             })
+
+            render()()
 
         });
 
@@ -76,18 +89,32 @@
         this.get('#/addresses', function () {
             // load some data
             console.log('#/addresses')
-            loadingToggle()
+            
             //this.partial('templates/address.tpl');
             let self = this
-            jQuery.getScript("js/address.js").done(() => {
-                addresses.getList({}, function (err, result) {
-                    console.log('result', result.AddressQuery)
-                    self.partial('templates/address.tpl', {
-                        data: result.AddressQuery
-                    })
+            let render = function(){
+                return ()=>{
                     loadingToggle()
-                })
+                    jQuery.getScript("js/address.js").done(() => {
+                        addresses.getList({}, function (err, result) {
+                            console.log('result', result.AddressQuery)
+                            self.partial('templates/address.tpl', {
+                                data: result.AddressQuery
+                            })
+                            loadingToggle()
+                        })
+                    })
+                }
+            }
+
+            //socket 
+            socket.on('address', (data) => {
+                console.log('socket address',data)
+                render()()
             })
+
+            render()()
+
         });
 
         // address/:id
@@ -148,7 +175,7 @@
 
     app.run('#/transactions');
 
-    
+   
 
     function loadingToggle(){
         $('#loading').loading('toggle');
