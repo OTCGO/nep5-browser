@@ -4,18 +4,18 @@
         <div class="demo-card-event mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title mdl-card--expand">
                 <h4>
-                    <%=data._id || '无地址信息' %>
+                    <%=address || '无地址信息' %>
 
                 </h4>
             </div>
-            <% for ( let key in  data.balances) { %>
+            <% for ( let key in  data) { %>
                 <div class="mdl-card__actions mdl-card--border">
                     <span>数量：
-                        <%=data.balances[key] %>
+                        <%=data[key].balances %>
                     </span>
                     <div class="mdl-layout-spacer"></div>
                     <span>
-                        <%=assets_banaceof_list[key] + '(' + key.substring(0,5)+')' %>
+                        <%=data[key].symbol + '(' + data[key].contract.substring(0,5)+')' %>
                     </span>
                 </div>
                 <% } %>

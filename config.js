@@ -88,7 +88,7 @@ let asset_list = (params) => {
  // address BalanceOf 
 let get_balanceof = (params) => {
     return {
-        url: `${otcgo_url}/mainnet/address/${params.address}`,
+        url: `${root_url}/api/v1/nep5/address/balances/${params.address}`,
         method: 'get'
     }
 }

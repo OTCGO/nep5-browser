@@ -131,7 +131,8 @@
                 }, function (err, result) {
                     console.log('result', result)
                     self.partial('templates/address_id.tpl', {
-                        data: result ? JSON.parse(result) :""
+                        data: result ? result :"",
+                        address:address
                     })
                     loadingToggle()
                 })
