@@ -62,7 +62,8 @@
 
             socket.on('transaction', (data) => {
                 console.log('socket transaction',data)
-                render()()
+                // render()()
+                toast('亲！有新的数据到来，请刷新')
             })
 
             render()()
@@ -110,10 +111,16 @@
             //socket 
             socket.on('address', (data) => {
                 console.log('socket address',data)
-                render()()
+               // render()()
+               toast('亲！有新的数据到来，请刷新')
             })
 
             render()()
+          
+            
+
+
+            
 
         });
 
@@ -180,6 +187,14 @@
 
     function loadingToggle(){
         $('#loading').loading('toggle');
+    }
+
+    function toast(msg){
+        let snackbarContainer = document.querySelector('#neo-toast');
+        snackbarContainer.style.backgroundColor = '#' +
+        Math.floor(Math.random() * 0xFFFFFF).toString(16);
+        let data = {message: msg};
+        snackbarContainer.MaterialSnackbar.showSnackbar(data);
     }
     
 
