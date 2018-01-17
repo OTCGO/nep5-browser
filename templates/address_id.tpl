@@ -26,7 +26,7 @@
 <style>
     .demo-card-event.mdl-card {
         width: 100%;
-        height: 200px;
+        height: 400px;
         background: #46B6AC;
     }
 
