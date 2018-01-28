@@ -4,14 +4,14 @@
         <div class="demo-card-event mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title mdl-card--expand">
                 <h4>
-                    <%=data['txid'] %>
+                    <%=data['txid'] || '错误的txid或者转账失败' %>
                 </h4>
             </div>
             <div class="mdl-card__actions mdl-card--border">
                 <span>名称： </span>
                 
                 <div class="mdl-layout-spacer"></div>
-                <span><%=data['symbol']%></span>
+                <span><%=data['symbol'] || ''%></span>
             </div>
             <div class="mdl-card__actions mdl-card--border">
                 <span>类型： </span>
@@ -40,7 +40,7 @@
                 <span>区块索引： </span>
                
                 <div class="mdl-layout-spacer"></div>
-                <span><%=data['blockIndex'] %></span>
+                <span><%=data['blockIndex'] || '' %></span>
             </div>
             <div class="mdl-card__actions mdl-card--border">
                 <span>交易时间： </span>
