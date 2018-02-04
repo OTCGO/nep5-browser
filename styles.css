@@ -197,6 +197,12 @@ a {
 
 
 /**** Mobile layout ****/
+@media (max-width: 900px) {
+  .neo-logo-image{
+    width: 80px;
+  }
+}
+
 
 @media (max-width: 900px) {
   .neo-navigation-container {
