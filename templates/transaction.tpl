@@ -11,6 +11,11 @@
                 </tr>
             </thead>
             <tbody>
+                <% if (data.rows.length === 0) { %>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">txid错误或者转账失败,请检查txid</td>
+                    </tr>
+                <% }  %>
                 <% for ( let i = 0; i < data.rows.length; i++ ) { %>
                     <tr>
                         <td class="mdl-data-table__cell--non-numeric"><%=data.rows[i]['symbol'] %></td>

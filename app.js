@@ -49,7 +49,7 @@
                 return () => {
                     loadingToggle()
                     jQuery.getScript("js/transaction.js").done(() => {
-                        transactions.getList({}, function (err, result) {
+                        transactions.getList({search}, function (err, result) {
                             console.log('result', result.TransactionQuery)
                             self.partial('templates/transaction.tpl', {
                                 data: result.TransactionQuery
