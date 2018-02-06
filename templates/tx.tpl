@@ -23,13 +23,13 @@
                 <span>转入地址： </span>
                 
                 <div class="mdl-layout-spacer"></div>
-                <span> <a href="/#/address/<%=data['to']['value']%>"><%=data['to']['value']%></a></span>
+                <span> <a style="color:#fff" href="/#/address/<%=data['to']['value']%>"><%=data['to']['value']%></a></span>
             </div>
             <div class="mdl-card__actions mdl-card--border">
                 <span>转出地址： </span>
                 
                 <div class="mdl-layout-spacer"></div>
-                <span> <a href="/#/address/<%=data['from']['value']%>"><%=data['from']['value']%></a></span>
+                <span> <a style="color:#fff" href="/#/address/<%=data['from']['value']%>"><%=data['from']['value']%></a></span>
             </div>
             <div class="mdl-card__actions mdl-card--border">
                 <span>数量： </span>
