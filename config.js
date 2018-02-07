@@ -1,6 +1,6 @@
-// let root_url = 'http://nep5-api.otcgo.cn'
+let root_url = 'http://nep5-api.otcgo.cn'
 
-let root_url = 'http://127.0.0.1:8001'
+// let root_url = 'http://127.0.0.1:8001'
 
 
 const transaction_list = (params) => {
