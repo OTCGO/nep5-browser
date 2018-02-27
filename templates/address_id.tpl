@@ -7,18 +7,21 @@
                     <%=address || '无地址信息' %>
 
                 </h4>
+                
             </div>
             <% for ( let key in  data) { %>
-                <div class="mdl-card__actions mdl-card--border">
-                    <span>数量：
-                        <%=data[key].balances %>
-                    </span>
-                    <div class="mdl-layout-spacer"></div>
-                    <span>
-                        <%=data[key].symbol + '(' + data[key].contract.substring(0,5)+')' %>
-                    </span>
-                </div>
-                <% } %>
+              
+                    <div class="mdl-card__actions mdl-card--border">
+                        <span>数量：
+                            <%=data[key].balances %>
+                        </span>
+                        <div class="mdl-layout-spacer"></div>
+                        <span>
+                            <%=data[key].symbol + '(' + data[key].contract.substring(0,5)+')' %>
+                        </span>
+                    </div>
+                  
+                <% } %>    
         </div>
     </div>
 </div>
@@ -26,7 +29,7 @@
 <style>
     .demo-card-event.mdl-card {
         width: 100%;
-        height: 400px;
+        height: auto;
         background: #46B6AC;
     }
 
