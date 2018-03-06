@@ -18,7 +18,7 @@
                     <tr>
                         <td class="mdl-data-table__cell--non-numeric"><%=data.rows[i]['symbol'] || '' %></td>
                         <td class="mdl-data-table__cell--non-numeric ellipsis">
-                            <%=data.rows[i]['contract'] || '' %>
+                            <%=data.rows[i]['contract'].substring(2) || '' %>
                         </td>
                         <td >
                             NEP5

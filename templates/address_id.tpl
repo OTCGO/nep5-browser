@@ -17,7 +17,7 @@
                         </span>
                         <div class="mdl-layout-spacer"></div>
                         <span>
-                            <%=data[key].symbol + '(' + data[key].contract.substring(0,5)+')' %>
+                            <%=data[key].symbol + '(' + data[key].contract.substring(2,7)+')' %>
                         </span>
                     </div>
                   
