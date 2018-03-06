@@ -11,7 +11,9 @@ const transaction_list = (params) => {
         data: {
             query: ` {
                  TransactionQuery(skip:${params.skip||0},limit:${params.limit||20},
-                    ${params.txid ? `txid:"${params.txid}"`:"," }${params.search ? `search:"${params.search}"`:"," }){
+                    ${params.txid ? `txid:"${params.txid}"`:"," }
+                    ${params.search ? `search:"${params.search}"`:"," }
+                    ${params.address ? `address:"${params.address}"`:"," }){
                  count,
                  rows {
                      _id

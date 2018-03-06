@@ -8,11 +8,12 @@
         request(url,cb)
     }
     
-    function loadMore() {
+    function loadMore(params) {
         console.log('loadMore','loadMore')
+        console.log('params',params)
         page++
         console.log('page',page)
-        let url = transaction_list({skip:(page-1)*20,limit:20})
+        let url = transaction_list(Object.assign({skip:(page-1)*20,limit:20},params))
         request(url,(err,result) => {
            // console.log('result',result)
             let html = ''

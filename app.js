@@ -133,16 +133,27 @@
             let self = this
             let {address}  = this.params
             jQuery.getScript("js/address.js").done(() => {
-                addresses.getBalanceOf({
-                    address:address,
-                }, function (err, result) {
-                    console.log('result', result)
-                    self.partial('templates/address_id.tpl', {
-                        data: result ? result :"",
-                        address:address
+
+                jQuery.getScript("js/transaction.js").done(() => {
+                    addresses.getBalanceOf({
+                        address:address,
+                    }, function (err, result) {
+                        console.log('addresses', result)
+                        transactions.getList({address}, function (err, list) {
+                            console.log('transactions', list)
+    
+                            self.partial('templates/address_id.tpl', {
+                                data: result ? result :"",
+                                address:address,
+                                list: list.TransactionQuery
+                            })
+                             loadingToggle()
+                        })
+    
+    
                     })
-                    loadingToggle()
                 })
+
             })
         });
 
