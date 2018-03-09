@@ -60,11 +60,11 @@
                 }
             }
 
-            socket.on('transaction', (data) => {
-                console.log('socket transaction',data)
-                // render()()
-                // toast('亲！有新的数据到来，请刷新')
-            })
+            // socket.on('transaction', (data) => {
+            //     console.log('socket transaction',data)
+            //     // render()()
+            //     // toast('亲！有新的数据到来，请刷新')
+            // })
 
             render()()
 
@@ -109,11 +109,11 @@
             }
 
             //socket 
-            socket.on('address', (data) => {
-                console.log('socket address',data)
-               // render()()
-               // toast('亲！有新的数据到来，请刷新')
-            })
+            // socket.on('address', (data) => {
+            //     console.log('socket address',data)
+            //    // render()()
+            //    // toast('亲！有新的数据到来，请刷新')
+            // })
 
             render()()
           

@@ -242,3 +242,9 @@ a {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+#loading .current{
+  text-align: right;
+  color: #8bc34a;
+  margin-right:10px;
+}

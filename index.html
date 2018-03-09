@@ -29,10 +29,10 @@
             z-index: 900;
         }
         body {
-  padding: 20px;
-  background: #fafafa;
-  position: relative;
-}
+            
+            background: #fafafa;
+            position: relative;
+        }
     </style>
 </head>
 
@@ -80,12 +80,6 @@
                 <button class="neo-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
                     <i class="material-icons">more_vert</i>
                 </button>
-                <!-- <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-                    <li class="mdl-menu__item">5.0 Lollipop</li>
-                    <li class="mdl-menu__item">4.4 KitKat</li>
-                    <li disabled class="mdl-menu__item">4.3 Jelly Bean</li>
-                    <li class="mdl-menu__item">neo History</li>
-                </ul> -->
             </div>
         </div>
 
@@ -106,6 +100,7 @@
         </div>
 
         <div id="loading" class="neo-content mdl-layout__content">
+            <h5 class="current">高度:<span class="height"></span></h5>
             <a name="top"></a>
             <div id="main"></div>
 
@@ -157,7 +152,7 @@
     <script src="https://cdn.bootcss.com/socket.io/2.0.1/socket.io.js"></script>
     <script src="lib/jquery-loading/dist/jquery.loading.min.js"></script>
     <script src="config.js"></script>
-    <script src="js/notification.js"></script>
+    <!-- <script src="js/notification.js"></script> -->
     <script src="utils/request.js"></script>
     <script src="lib/sammy.template.js"></script>
     <script src="app.js"></script>
