@@ -1,54 +1,58 @@
 <div class="neo-address_id mdl-grid">
     <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--12-col-phone mdl-cell--1-offset-desktop mdl-cell--1-offset-tablet">
+        <% for ( let i = 0; i < data.length; i++ ) { %>
+        
+            <div class="demo-card-event mdl-card mdl-shadow--2dp" style="margin-bottom:15px">
+                <div class="mdl-card__title mdl-card--expand">
+                    <h4>
+                        <%=data[i]['txid'] || '错误的txid或者转账失败' %>
+                    </h4>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <span>名称： </span>
+                    
+                    <div class="mdl-layout-spacer"></div>
+                    <span><%=data[i]['symbol'] || ''%></span>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <span>类型： </span>
+                    
+                    <div class="mdl-layout-spacer"></div>
+                    <span>NEP5</span>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <span>转入地址： </span>
+                    
+                    <div class="mdl-layout-spacer"></div>
+                    <span> <a style="color:#fff" href="/#/address/<%=data[i]['to']['value']%>"><%=data[i]['to']['value']%></a></span>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <span>转出地址： </span>
+                    
+                    <div class="mdl-layout-spacer"></div>
+                    <span> <a style="color:#fff" href="/#/address/<%=data[i]['from']['value']%>"><%=data[i]['from']['value']%></a></span>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <span>数量： </span>
+                    <div class="mdl-layout-spacer"></div>
+                    <span><%=data[i]['value']%></span>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <span>区块索引： </span>
+                
+                    <div class="mdl-layout-spacer"></div>
+                    <span><%=data[i]['blockIndex'] || '' %></span>
+                </div>
+                <div class="mdl-card__actions mdl-card--border">
+                    <span>交易时间： </span>
+                
+                    <div class="mdl-layout-spacer"></div>
+                    <span><%=moment.unix(data[i]['createdAt']).format('YYYY-MM-DD HH:mm:ss') %></span>
+                </div>
+            </div>
 
-        <div class="demo-card-event mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title mdl-card--expand">
-                <h4>
-                    <%=data['txid'] || '错误的txid或者转账失败' %>
-                </h4>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <span>名称： </span>
-                
-                <div class="mdl-layout-spacer"></div>
-                <span><%=data['symbol'] || ''%></span>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <span>类型： </span>
-                
-                <div class="mdl-layout-spacer"></div>
-                <span>NEP5</span>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <span>转入地址： </span>
-                
-                <div class="mdl-layout-spacer"></div>
-                <span> <a style="color:#fff" href="/#/address/<%=data['to']['value']%>"><%=data['to']['value']%></a></span>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <span>转出地址： </span>
-                
-                <div class="mdl-layout-spacer"></div>
-                <span> <a style="color:#fff" href="/#/address/<%=data['from']['value']%>"><%=data['from']['value']%></a></span>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <span>数量： </span>
-                <div class="mdl-layout-spacer"></div>
-                <span><%=data['value']%></span>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <span>区块索引： </span>
-               
-                <div class="mdl-layout-spacer"></div>
-                <span><%=data['blockIndex'] || '' %></span>
-            </div>
-            <div class="mdl-card__actions mdl-card--border">
-                <span>交易时间： </span>
-               
-                <div class="mdl-layout-spacer"></div>
-                <span><%=moment.unix(data['createdAt']).format('YYYY-MM-DD HH:mm:ss') %></span>
-            </div>
-        </div>
+        <% }  %>
+        
     </div>
 </div>
 

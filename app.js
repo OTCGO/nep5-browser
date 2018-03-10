@@ -176,7 +176,7 @@
                 transactions.getList({txid}, function (err, result) {
                     // console.log('result', result.TransactionQuery)
                     self.partial('templates/tx.tpl', {
-                        data: result.TransactionQuery.rows[0] || ''
+                        data: result.TransactionQuery.rows || ''
                     })
                     loadingToggle()
                 })
